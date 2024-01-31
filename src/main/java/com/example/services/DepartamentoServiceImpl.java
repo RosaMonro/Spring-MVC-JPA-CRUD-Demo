@@ -26,4 +26,9 @@ public class DepartamentoServiceImpl implements DepartamentoService {
         return departamentoDao.findById(idDepartamento).get();
     }
 
+    @Override
+    public void persistirDpto(Departamento departamento) {
+        departamentoDao.save(departamento);
+    }
+
 }
