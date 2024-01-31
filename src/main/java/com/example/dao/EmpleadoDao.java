@@ -7,7 +7,9 @@ import com.example.entities.Empleado;
 import java.util.List;
 
 
-@Repository
+@Repository // Para crear beans de datos
+//para que se sepa que aquí hay beans
+
 public interface EmpleadoDao extends JpaRepository<Empleado, Integer> {
     List<Empleado> findByNombre(String nombre);
 
