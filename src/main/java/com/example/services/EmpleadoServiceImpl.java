@@ -31,20 +31,17 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 
     @Override
     public void eliminaEmpleado(int idEmpleado) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'eliminaEmpleado'");
+        empleadoDao.deleteById(idEmpleado);
     }
 
     @Override
     public void persistirEmpleado(Empleado empleado) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'persistirEmpleado'");
+        empleadoDao.save(empleado);
     }
 
     @Override
     public void actualizarEmpleado(Empleado empleado) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'actualizarEmpleado'");
+        empleadoDao.save(empleado);
     }
 
 
