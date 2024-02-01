@@ -49,7 +49,7 @@ public class Empleado implements Serializable{
     private Genero genero;
 
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
     private Departamento departamento;
 
 
