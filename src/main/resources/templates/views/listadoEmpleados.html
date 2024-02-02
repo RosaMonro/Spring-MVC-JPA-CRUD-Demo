@@ -30,14 +30,19 @@
                 <td th:text="${empleado.fechaAlta}"></td>
                 <td th:text="${empleado.salario}"></td>
                 <td>
-                    <a th:href="@{/detalles?id=} + ${empleado.id}"  target="_blank">Detalles</a>
+                    <!-- <a th:href="@{/detalles?id=} + ${empleado.id}"  target="_blank">Detalles</a> -->
+
+                    <a th:href="@{/detalles/} + ${empleado.id}"  target="_blank">Detalles</a>
+
                 </td>
             </tr>
         </tbody>
 
     </table>
 
-
+    <div>
+        <a th:href="@{/frmAltaModificacion}" target="_blank">Formulario de Alta de Empleado</a>
+    </div>
 
 </body>
 </html>

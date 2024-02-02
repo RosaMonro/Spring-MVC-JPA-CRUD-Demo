@@ -17,7 +17,7 @@ public class DepartamentoServiceImpl implements DepartamentoService {
     private final DepartamentoDao departamentoDao;
 
     @Override
-    public List<Departamento> dameDepartamento() {
+    public List<Departamento> dameDepartamentos() {
         return departamentoDao.findAll();
     }
 

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Formulario Alta/Modificación de Empleado</h1>
+
+    <fieldset>
+        <legend>Formulario</legend>
+        <form th:object="${empleado}" th:action="@{/persistir}" method="post">
+
+            <label for="nombre">Nombre: </label>
+            <input type="text" id="nombre" th:field="*{nombre}">
+
+            <label for="primerApellido">Primer Apellido: </label>
+            <input type="text" id="primerApellido" th:field="*{primerApellido}">
+
+            <label for="segundoApellido">Segundo Apellido: </label>
+            <input type="text" id="segundoApellido" th:field="*{segundoApellido}"><br>
+
+            <label for="fechaAlta">Fecha de Alta: </label>
+            <input type="date" id="fechaAlta" th:field="*{fechaAlta}">
+
+            <label for="salario">Salario: </label>
+            <input type="text" id="salario" th:field="*{salario}">
+
+            <fieldset>
+                <legend>Género: </legend>
+
+                <label for="hombre">Hombre</label>
+                <input type="radio" name="genero" id="hombre" value="HOMBRE" th:field="*{genero}">
+
+                <label for="mujer">Mujer</label>
+                <input type="radio" name="genero" id="mujer" value="MUJER" th:field="*{genero}">
+
+                <label for="otro">Otro</label>
+                <input type="radio" name="genero" id="otro" value="OTRO" th:field="*{genero}">
+            </fieldset>
+
+            <label for="departamento">Departamentos </label>
+            <select name="departamento" id="departamento">
+                <option></option>
+                <option th:each=" departamento : ${departamentos}"
+                        th:value="${departamento.id}"
+                        th:text="${departamento.nombre}"></option>
+
+            </select><br>
+
+            <label for="telefonos">Telefonos </label>
+            <input type="text" name="numerosTel" id="telefonos" placeholder="Uno o varios separados por punto y coma">
+
+            <label for="correos">Correos</label>
+            <input type="text" id="correos" name="direccionesCorreo" placeholder="Uno o varios separados por punto y coma"><br>
+
+            <input type="submit" value="Alta/Modificacion">
+
+    </fieldset>
+</body>
+</html>
