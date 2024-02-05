@@ -30,7 +30,7 @@ public class EmpleadoServiceImpl implements EmpleadoService {
     }
 
     @Override
-    public void eliminaEmpleado(int idEmpleado) {
+    public void eliminarEmpleado(int idEmpleado) {
         empleadoDao.deleteById(idEmpleado);
     }
 

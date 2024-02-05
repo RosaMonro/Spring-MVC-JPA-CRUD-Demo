@@ -24,6 +24,7 @@ import com.example.services.DepartamentoService;
 import com.example.services.EmpleadoService;
 import com.example.services.TelefonoService;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 
 @Controller
@@ -96,6 +97,7 @@ public class MainController {
 
 
         @PostMapping("/persistir")
+        @Transactional
         public String persistirEmpleado(@ModelAttribute(name = "empleado") Empleado empleado,
             @RequestParam(name = "numerosTel", required = false) String telefonosRecibidos,
             @RequestParam(name = "direccionesCorreo", required = false) String correosRecibidos) {
@@ -150,6 +152,7 @@ public class MainController {
         // Modificar un empleqado:
 
         @GetMapping("/actualizar/{id}")
+        @Transactional
         public String actualizarEmpleado(@PathVariable(name = "id", required = true) int idEmpleado, Model model) {
 
             // llamamos al método de buscar al empleado para recuperar al empleado cuyo id se recibe como parámetro
@@ -185,6 +188,18 @@ public class MainController {
 
             return "views/frmAltaModificacionEmpleado";
         }
+
+
+
+        // Eliminar un empleado
+
+    @GetMapping("/eliminar/{id}")
+    @Transactional
+    public String eliminarEmpleado(@PathVariable(name = "id", required = true) int idEmpleado) {
+        empleadoService.eliminarEmpleado(idEmpleado);
+
+        return "redirect:/all";
+    }
 
 
 }
