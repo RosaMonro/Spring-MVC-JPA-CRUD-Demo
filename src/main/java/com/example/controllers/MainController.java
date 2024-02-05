@@ -193,13 +193,13 @@ public class MainController {
 
         // Eliminar un empleado
 
-    @GetMapping("/eliminar/{id}")
-    @Transactional
-    public String eliminarEmpleado(@PathVariable(name = "id", required = true) int idEmpleado) {
-        empleadoService.eliminarEmpleado(idEmpleado);
+        @GetMapping("/eliminar/{id}")
+        @Transactional
+        public String eliminarEmpleado(@PathVariable(name = "id", required = true) int idEmpleado) {
+            empleadoService.eliminarEmpleado(idEmpleado);
 
-        return "redirect:/all";
-    }
+            return "redirect:/all";
+        }
 
 
 }
