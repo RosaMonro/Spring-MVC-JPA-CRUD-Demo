@@ -12,6 +12,8 @@
         <legend>Formulario</legend>
         <form th:object="${empleado}" th:action="@{/persistir}" method="post">
 
+            <input type="hidden" th:field="*{id}">
+
             <label for="nombre">Nombre: </label>
             <input type="text" id="nombre" th:field="*{nombre}">
 
@@ -45,15 +47,23 @@
                 <option></option>
                 <option th:each=" departamento : ${departamentos}"
                         th:value="${departamento.id}"
-                        th:text="${departamento.nombre}"></option>
+                        th:text="${departamento.nombre}"
+                        th:selected="${empleado.id != 0 and empleado.departamento.id == departamento.id}"></option>
 
             </select><br>
 
             <label for="telefonos">Telefonos </label>
-            <input type="text" name="numerosTel" id="telefonos" placeholder="Uno o varios separados por punto y coma">
+            <input type="text" 
+                    name="numerosTel" id="telefonos" 
+                    placeholder="Uno o varios separados por punto y coma"
+                    th:value="${numerosTelefono}">
 
             <label for="correos">Correos</label>
-            <input type="text" id="correos" name="direccionesCorreo" placeholder="Uno o varios separados por punto y coma"><br>
+            <input type="text" 
+                    id="correos" 
+                    name="direccionesCorreo" 
+                    placeholder="Uno o varios separados por punto y coma"
+                    th:value="${direccionesDeCorreo}"><br>
 
             <input type="submit" value="Alta/Modificacion">
 

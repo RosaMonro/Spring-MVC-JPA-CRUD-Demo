@@ -11,7 +11,7 @@ import com.example.entities.Empleado;
 @Repository
 
 public interface CorreoDao extends JpaRepository <Correo, Integer> {
-    List<Correo> findByEmpleado(Empleado empleado); // generamos este método por este no lo genera el DAO.
+    List<Correo> findByEmpleado(Empleado empleado); // generamos este método porq este no lo genera el DAO.
     void deleteByEmpleado(Empleado empleado);
 
 }

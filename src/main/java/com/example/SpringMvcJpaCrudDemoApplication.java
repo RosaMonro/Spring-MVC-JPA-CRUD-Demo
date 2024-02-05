@@ -21,7 +21,7 @@ import com.example.services.TelefonoService;
 
 import lombok.RequiredArgsConstructor;
 
-@SpringBootApplication
+@SpringBootApplication //
 @RequiredArgsConstructor
 
 public class SpringMvcJpaCrudDemoApplication implements CommandLineRunner {
