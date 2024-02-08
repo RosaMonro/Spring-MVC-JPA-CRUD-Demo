@@ -10,5 +10,7 @@
 
     <h1 th:text="'Detalles del empleado ' + ${empleado.nombre}"></h1>
 
+    <img th:src="@{/images/} + ${empleado.foto}" th:alt="'Imagen del empleado : ' + ${empleado.nombre}">
+
 </body>
 </html>

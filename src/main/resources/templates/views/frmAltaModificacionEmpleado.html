@@ -10,7 +10,7 @@
 
     <fieldset>
         <legend>Formulario</legend>
-        <form th:object="${empleado}" th:action="@{/persistir}" method="post">
+        <form th:object="${empleado}" th:action="@{/persistir}" method="post" enctype="multipart/form-data">
 
             <input type="hidden" th:field="*{id}">
 
@@ -65,7 +65,12 @@
                     placeholder="Uno o varios separados por punto y coma"
                     th:value="${direccionesDeCorreo}"><br>
 
+            <input type="file" name="file"> 
+            <!-- en el name no le puedo poner el mismo nombre que le di a la propiedad -->
+
             <input type="submit" value="Alta/Modificacion">
+
+        </form>    
 
     </fieldset>
 </body>

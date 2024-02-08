@@ -47,6 +47,7 @@ public class Empleado implements Serializable{
 
     @Enumerated(EnumType.STRING)
     private Genero genero;
+    private String foto; // aquí irá el nombre de la foto
 
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
